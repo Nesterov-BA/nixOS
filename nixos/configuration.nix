@@ -87,6 +87,7 @@
     kitty
     gnumake
     firefox
+    nix-ld
     hyprland
     wayland
     ranger

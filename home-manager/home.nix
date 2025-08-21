@@ -8,6 +8,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./bash.nix
   ];
 
   nixpkgs = {
@@ -43,7 +44,6 @@
     userName = "Nesterov-BA";
     userEmail = "nesterov.boris123@gmail.com";
   };
-  programs.nix-ld.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
