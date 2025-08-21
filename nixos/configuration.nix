@@ -91,7 +91,6 @@
     ranger
     awesome
     rofi
-    wget
   ];
   environment.variables.EDITIOR = "nvim";
   environment.variables.SUDO_EDITOR = "nvim";
