@@ -85,6 +85,7 @@
     wikiman
     tldr
     kitty
+    gnumake
     firefox
     hyprland
     wayland
