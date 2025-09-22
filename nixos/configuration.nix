@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./homemanager-module.nix
     ./boot.nix
+    ./packages.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -38,6 +39,10 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -46,8 +51,18 @@
   };
   services.xserver = {
     enable = true;
-    windowManager.awesome.enable = true;
+    displayManager = {
+      defaultSession = "hyprland";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
   };
+  # services.xserver = {
+  #   enable = true;
+  #   windowManager.awesome.enable = true;
+  # };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.boris = {
@@ -65,38 +80,11 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    gh
-    nix-search-tv
-    cargo
-    unzip
-    home-manager
-    gcc
-    nodejs_24
-    ripgrep
-    fd
-    lazygit
-    zathura
-    texliveFull
-    python3
-    fzf
-    wikiman
-    tldr
-    kitty
-    gnumake
-    firefox
-    nix-ld
-    hyprland
-    wayland
-    ranger
-    awesome
-    rofi
-  ];
+
   environment.variables.EDITIOR = "nvim";
   environment.variables.SUDO_EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
+  programs.nix-ld.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
