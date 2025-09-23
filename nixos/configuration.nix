@@ -10,6 +10,7 @@
     ./homemanager-module.nix
     ./boot.nix
     ./packages.nix
+    ./fonts.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.

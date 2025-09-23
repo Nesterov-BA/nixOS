@@ -5,6 +5,7 @@
     awesome
     btop
     cargo
+    dolphin
     dunst
     fd
     firefox
@@ -24,6 +25,7 @@
     neovim
     nix-search-tv
     nodejs_24
+    nomacs-qt6
     pavucontrol
     python3
     ripgrep
