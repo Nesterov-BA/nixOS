@@ -11,6 +11,7 @@
     ./boot.nix
     ./packages.nix
     ./fonts.nix
+    ./python-packages.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -26,8 +27,11 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
+  # Enable power daemon
+  services.power-profiles-daemon.enable = true;
+
   # Set your time zone.
-  time.timeZone = "Moscow/Russia";
+  time.timeZone = "Russia/Moscow";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -64,10 +68,10 @@
     tunMode.enable = true;
   };
 
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "minesddm";
-  };
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   settings = { Theme = { Current = "minesddm"; }; };
+  # };
   services.xserver = {
     enable = true;
     displayManager = {
@@ -75,6 +79,14 @@
       sddm = {
         enable = true;
         wayland.enable = true;
+        settings = {
+          Theme = { Current = "minesddm"; };
+          Autologin = {
+            Session = "hyprland";
+            User = "boris";
+          };
+        };
+        # theme = "minesddm";
       };
     };
   };
@@ -104,6 +116,7 @@
   environment.variables.SUDO_EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
   programs.nix-ld.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -119,8 +132,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.trusted-users = [ "root" "boris" ];
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 1080 1081 2080 2081 8080 ];
+  networking.firewall.allowedUDPPorts = [ 1080 1081 2080 2081 8080 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

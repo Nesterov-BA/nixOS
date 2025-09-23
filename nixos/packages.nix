@@ -17,6 +17,7 @@
     gnumake
     home-manager
     hyprland
+    hyprlock
     hyprpaper
     icu
     kdePackages.dolphin
@@ -37,6 +38,7 @@
     ripgrep
     rofi-wayland
     spotify
+    brightnessctl
     stylua
     telegram-desktop
     texliveFull
