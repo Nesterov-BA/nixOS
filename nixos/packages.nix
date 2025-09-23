@@ -3,9 +3,11 @@
     # rofi
     # wikiman
     awesome
+    bibata-cursors
     btop
+    capitaine-cursors
     cargo
-    dolphin
+    cliphist
     dunst
     fd
     firefox
@@ -17,6 +19,7 @@
     hyprland
     hyprpaper
     icu
+    kdePackages.dolphin
     kitty
     lazygit
     lua-language-server
@@ -27,9 +30,13 @@
     nodejs_24
     nomacs-qt6
     pavucontrol
+    phinger-cursors
+    posy-cursors
+    power-profiles-daemon
     python3
     ripgrep
     rofi-wayland
+    spotify
     stylua
     telegram-desktop
     texliveFull

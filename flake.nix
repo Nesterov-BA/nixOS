@@ -10,13 +10,15 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nvf.url = "github:notashelf/nvf";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
     minesddm = {
       url = "github:Davi-S/sddm-theme-minesddm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvf, nix-flatpak, minesddm
+    , spicetify-nix, ... }@inputs:
     let inherit (self) outputs;
     in {
       # NixOS configuration entrypoint

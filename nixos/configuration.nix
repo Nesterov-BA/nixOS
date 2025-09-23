@@ -23,6 +23,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
   # Set your time zone.
   time.timeZone = "Moscow/Russia";
 
@@ -49,6 +52,21 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly"; # Or daily, etc.
+    options = "--delete-older-than 7d";
+  };
+  programs.nekoray = {
+    enable = true;
+    tunMode.enable = true;
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "minesddm";
   };
   services.xserver = {
     enable = true;
