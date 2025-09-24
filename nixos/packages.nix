@@ -16,7 +16,7 @@
     firefox
     fzf
     gcc
-    gh
+    # gh
     gnumake
     home-manager
     hyprland

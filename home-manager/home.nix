@@ -45,7 +45,10 @@
     userName = "Nesterov-BA";
     userEmail = "nesterov.boris123@gmail.com";
   };
-
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = { enable = true; };
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
