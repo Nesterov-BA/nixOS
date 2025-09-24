@@ -4,7 +4,10 @@
     # wikiman
     awesome
     bibata-cursors
+    libsForQt5.full
+    brightnessctl
     btop
+    bzip2
     capitaine-cursors
     cargo
     cliphist
@@ -37,19 +40,24 @@
     python3
     ripgrep
     rofi-wayland
+    smplayer
     spotify
-    brightnessctl
+    sqlite
+    stdenv.cc.cc.lib
     stylua
     telegram-desktop
     texliveFull
     tldr
     unzip
+    uv
     waybar
     wayland
     wget
     wl-clipboard
+    xz
     yazi
     zathura
+    zlib
   ];
   services = {
     flatpak = {

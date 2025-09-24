@@ -11,7 +11,6 @@
     ./boot.nix
     ./packages.nix
     ./fonts.nix
-    ./python-packages.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -115,6 +114,15 @@
   environment.variables.EDITIOR = "nvim";
   environment.variables.SUDO_EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
+  environment.variables.LD_LIBRARY_PATH = "${
+      pkgs.lib.makeLibraryPath [
+        pkgs.stdenv.cc.cc.lib
+        pkgs.zlib
+        pkgs.bzip2
+        pkgs.xz
+        pkgs.sqlite
+      ]
+    }:$LD_LIBRARY_PATH";
   programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
